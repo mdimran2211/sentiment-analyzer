@@ -1,5 +1,6 @@
 streamlit
 textblob
+tweepy
+python-dotenv
 pandas
 matplotlib
-tweepy
