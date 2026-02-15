@@ -32,6 +32,59 @@ A Streamlit app to analyze sentiment from manual text input and live Twitter top
 
 1. Clone the repo:
 
-```bash
 git clone https://github.com/mdimran2211/sentiment-analyzer.git
 cd sentiment-analyzer
+
+2. Create a virtual environment:
+python -m venv venv
+Windows:
+venv\Scripts\activate
+Mac/Linux:
+source venv/bin/activate
+
+
+
+3.Install dependencies:
+pip install -r requirements.txt
+
+
+4.Add your Twitter Bearer Token safely:
+Create a file key.env:
+BEARER_TOKEN=YOUR_NEW_BEARER_TOKEN_HERE
+Do not commit this file to GitHub.
+Or use Streamlit Secrets for deployment on Streamlit Cloud.
+
+
+🎯 Usage
+Local
+streamlit run app.py
+Enter your text in the manual input box to analyze sentiment.
+
+Enter a topic to search tweets and see live sentiment analysis.
+
+Streamlit Cloud (Live)
+
+Push your repo to GitHub.
+
+Connect the repo to Streamlit Cloud.
+
+Add the Bearer Token in Secrets.
+
+Deploy → your live app will be ready.
+
+Live Demo: Click here to open app
+
+🛡️ Security Notes
+
+Never share your Bearer Token publicly.
+
+Keep key.env in .gitignore.
+
+Use Streamlit Secrets for live deployments.
+
+Regenerate tokens if they are leaked or exposed.
+
+📌 Author
+
+MD Imran
+GitHub: mdimran2211
