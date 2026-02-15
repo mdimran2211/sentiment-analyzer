@@ -1,14 +1,21 @@
 import streamlit as st
 from textblob import TextBlob
 import tweepy
+import os
+from dotenv import load_dotenv
+
+# Load safe key from key.env
+load_dotenv("key.env")
+bearer_token = os.getenv("BEARER_TOKEN")
+
+# Initialize Twitter client
+client = tweepy.Client(bearer_token=bearer_token)
 
 st.title("Live Social Media Sentiment Analyzer")
 
-# Twitter API
-bearer_token = "APNA_BEARER_TOKEN_YAHAN"
-client = tweepy.Client(bearer_token=bearer_token)
-
-# 1️⃣ Manual text input (old functionality)
+# ---------------------
+# 1️⃣ Manual text sentiment
+# ---------------------
 text = st.text_area("Enter your own text to analyze sentiment:")
 
 if st.button("Analyze My Text"):
@@ -27,7 +34,9 @@ if st.button("Analyze My Text"):
 
 st.markdown("---")  # separator
 
-# 2️⃣ Live Twitter topic search
+# ---------------------
+# 2️⃣ Live Twitter sentiment
+# ---------------------
 topic = st.text_input("Search topic on Twitter")
 
 if st.button("Analyze Tweets"):
